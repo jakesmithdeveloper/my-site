@@ -16,6 +16,19 @@ const Layout = ({ children }) => {
         </ul>
       </header>
       {children}
+      <footer
+        style={{
+          position: "fixed",
+          left: 0,
+          bottom: 0,
+          width: "100%",
+          textAlign: "center",
+        }}
+      >
+        <ul>
+          <li style={{ listStyle: "none" }}>© 2021 jakesmith.info</li>
+        </ul>
+      </footer>
     </div>
   )
 }
