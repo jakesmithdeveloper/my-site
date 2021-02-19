@@ -2,17 +2,7 @@
   {
     "name": "SitStand Stopwatch",
     "status": "development",
-    "link": "N/A"
-  },
-
-  {
-    "name": "SitStand Stopwatch",
-    "status": "development",
-    "link": "N/A"
-  },
-  {
-    "name": "SitStand Stopwatch",
-    "status": "development",
-    "link": "N/A"
+    "link": "N/A",
+    "description": "Simple timer to keep track of how long you stand vs sit while you work"
   }
 ]

@@ -7,7 +7,14 @@ const Layout = ({ children }) => {
   return (
     <div style={{ margin: "3rem auto", maxWidth: 700 }}>
       <header>
-        <Link to="/" style={{ textShadow: "none", backgroundImage: "none" }}>
+        <Link
+          to="/"
+          style={{
+            textShadow: "none",
+            backgroundImage: "none",
+            textDecoration: "none",
+          }}
+        >
           <h1 style={{ display: "inline" }}>Jakesmith.info</h1>
         </Link>
         <ul style={{ listStyle: "none", float: "right" }}>

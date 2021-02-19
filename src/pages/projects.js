@@ -14,12 +14,12 @@ const Projects = ({ data }) => {
           <th>Status</th>
           <th>Link</th>
         </thead>
-        <tbody>
+        <tbody style={{ border: "none" }}>
           {data.allProjectsJson.edges.map(({ node }, index) => (
-            <tr style={{ borderTop: "none", borderBottom: "none" }} key={index}>
-              <td>{node.name}</td>
-              <td>{node.status}</td>
-              <td>{node.link}</td>
+            <tr style={{ borderTopStyle: "none" }} key={index}>
+              <td style={{ borderTopStyle: "none" }}>{node.name}</td>
+              <td style={{ borderTopStyle: "none" }}>{node.status}</td>
+              <td style={{ borderTopStyle: "none" }}>{node.link}</td>
             </tr>
           ))}
         </tbody>
@@ -36,6 +36,7 @@ export const query = graphql`
           name
           link
           status
+          description
         }
       }
     }

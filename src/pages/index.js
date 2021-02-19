@@ -16,20 +16,22 @@ export default function Home() {
         >
           <Image />
         </div>
-        <p
-          style={{
-            textAlign: "center",
-          }}
-        >
-          This site will have to do for now ... I want to focus on building{" "}
-          <Link
-            style={{ textShadow: "none", backgroundImage: "none" }}
-            to="/projects/"
+        <div style={{ textAlign: "center" }}>
+          <p
+            style={{
+              textAlign: "center",
+            }}
           >
-            <span style={{ color: "purple" }}>cool things</span>
-          </Link>
-          .
-        </p>
+            This site will have to do for now ... I want to focus on building{" "}
+            <Link
+              style={{ textShadow: "none", backgroundImage: "none" }}
+              to="/projects/"
+            >
+              <span style={{ color: "purple" }}>cool things</span>
+            </Link>
+            .
+          </p>
+        </div>
       </Layout>
     </div>
   )

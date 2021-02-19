@@ -20,8 +20,24 @@ const Tags = ({ pageContext, data }) => {
             const { slug } = node.fields
             const { title } = node.frontmatter
             return (
-              <li key={slug}>
-                <Link to={slug}>{title}</Link>
+              <li style={{}} key={slug}>
+                <Link
+                  style={{
+                    textDecoration: "none",
+                    color: "inherit",
+                    textShadow: "none",
+                    backgroundImage: "none",
+                  }}
+                  to={slug}
+                >
+                  <h3>
+                    {node.frontmatter.title}{" "}
+                    <span style={{ color: "#bbb" }}>
+                      {" "}
+                      - {node.frontmatter.date}
+                    </span>
+                  </h3>
+                </Link>
               </li>
             )
           })}
@@ -49,6 +65,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            date
           }
         }
       }

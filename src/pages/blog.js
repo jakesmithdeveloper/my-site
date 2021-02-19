@@ -15,13 +15,31 @@ const Blog = ({ data }) => {
           {data.allMarkdownRemark.group.map(({ fieldValue }) => (
             <li style={{ display: "inline-block", marginRight: "1rem" }}>
               <Link
-                style={{ textDecoration: "none", color: "inherit" }}
+                style={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  textShadow: "none",
+                  backgroundImage: "none",
+                }}
                 to={`/tags/${fieldValue}`}
               >
                 {fieldValue}
               </Link>
             </li>
           ))}
+          <li style={{ display: "inline-block" }}>
+            <Link
+              to="/tags/"
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+                textShadow: "none",
+                backgroundImage: "none",
+              }}
+            >
+              <strong>All tags</strong>
+            </Link>
+          </li>
         </ul>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
@@ -47,7 +65,7 @@ const Blog = ({ data }) => {
 
 export const query = graphql`
   {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
       totalCount
       edges {
         node {
@@ -55,6 +73,7 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            tags
           }
           fields {
             slug

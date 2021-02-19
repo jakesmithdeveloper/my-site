@@ -1,6 +1,6 @@
 ---
 title: "Third Blog Post"
-date: "2021-02-18"
+date: "2021-02-17"
 tags: ["general"]
 ---
 
