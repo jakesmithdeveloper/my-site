@@ -14,12 +14,12 @@ const Projects = ({ data }) => {
           <th>Status</th>
           <th>Link</th>
         </thead>
-        <tbody style={{ border: "none" }}>
+        <tbody>
           {data.allProjectsJson.edges.map(({ node }, index) => (
-            <tr style={{ borderTopStyle: "none" }} key={index}>
-              <td style={{ borderTopStyle: "none" }}>{node.name}</td>
-              <td style={{ borderTopStyle: "none" }}>{node.status}</td>
-              <td style={{ borderTopStyle: "none" }}>{node.link}</td>
+            <tr key={index}>
+              <td>{node.name}</td>
+              <td>{node.status}</td>
+              <td>{node.link}</td>
             </tr>
           ))}
         </tbody>

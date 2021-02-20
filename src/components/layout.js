@@ -2,24 +2,22 @@ import React from "react"
 import { Link } from "gatsby"
 
 import ListLink from "./listLink"
+import styles from "./styles/layout.module.css"
 
 const Layout = ({ children }) => {
   return (
-    <div style={{ margin: "3rem auto", maxWidth: 700 }}>
+    <div className={styles.pageLayout}>
       <header>
-        <Link
-          to="/"
-          style={{
-            textShadow: "none",
-            backgroundImage: "none",
-            textDecoration: "none",
-          }}
-        >
+        <Link to="/" className={styles.cancelLinkStyle}>
           <h1 style={{ display: "inline" }}>Jakesmith.info</h1>
         </Link>
-        <ul style={{ listStyle: "none", float: "right" }}>
-          <ListLink to="/blog/">Blog</ListLink>
-          <ListLink to="/projects/">Projects</ListLink>
+        <ul className={styles.linkList}>
+          <ListLink className={styles.cancelLinkStyle} to="/blog/">
+            Blog
+          </ListLink>
+          <ListLink className={styles.cancelLinkStyle} to="/projects/">
+            Projects
+          </ListLink>
         </ul>
       </header>
       {children}

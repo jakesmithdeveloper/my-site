@@ -3,6 +3,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
+import styles from "./styles/tags.module.css"
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
@@ -21,28 +22,19 @@ const Tags = ({ pageContext, data }) => {
             const { title } = node.frontmatter
             return (
               <li style={{}} key={slug}>
-                <Link
-                  style={{
-                    textDecoration: "none",
-                    color: "inherit",
-                    textShadow: "none",
-                    backgroundImage: "none",
-                  }}
-                  to={slug}
-                >
+                <Link to={slug}>
                   <h3>
                     {node.frontmatter.title}{" "}
-                    <span style={{ color: "#bbb" }}>
-                      {" "}
-                      - {node.frontmatter.date}
-                    </span>
+                    <span> - {node.frontmatter.date}</span>
                   </h3>
                 </Link>
               </li>
             )
           })}
         </ul>
-        <Link to="/tags">All tags</Link>
+        <Link className={styles.linkStyles} to="/tags">
+          All tags
+        </Link>
       </div>
     </Layout>
   )

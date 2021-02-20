@@ -2,57 +2,36 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-//import ListLink from "../components/listLink"
+import styles from "./styles/blog.module.css"
 
 const Blog = ({ data }) => {
-  return (
+  return data.allMarkdownRemark.edges.length < 0 ? (
+    <div></div>
+  ) : (
     <Layout>
       <div>
-        <ul style={{ listStyle: "none" }}>
-          <li style={{ display: "inline-block", marginRight: "1rem" }}>
+        <ul className={styles.tagList}>
+          <li>
             <h3>Tags:</h3>
           </li>
           {data.allMarkdownRemark.group.map(({ fieldValue }) => (
-            <li style={{ display: "inline-block", marginRight: "1rem" }}>
-              <Link
-                style={{
-                  textDecoration: "none",
-                  color: "inherit",
-                  textShadow: "none",
-                  backgroundImage: "none",
-                }}
-                to={`/tags/${fieldValue}`}
-              >
-                {fieldValue}
+            <li>
+              <Link className={styles.linkStyle} to={`/tags/${fieldValue}`}>
+                {fieldValue}s
               </Link>
             </li>
           ))}
-          <li style={{ display: "inline-block" }}>
-            <Link
-              to="/tags/"
-              style={{
-                textDecoration: "none",
-                color: "inherit",
-                textShadow: "none",
-                backgroundImage: "none",
-              }}
-            >
+          <li>
+            <Link to="/tags/" className={styles.linkStyle}>
               <strong>All tags</strong>
             </Link>
           </li>
         </ul>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
-            <Link
-              to={node.fields.slug}
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
+            <Link to={node.fields.slug} className={styles.linkStyle}>
               <h3>
-                {node.frontmatter.title}{" "}
-                <span style={{ color: "#bbb" }}>
-                  {" "}
-                  - {node.frontmatter.date}
-                </span>
+                {node.frontmatter.title} <span> - {node.frontmatter.date}</span>
               </h3>
               <p>{node.exerp}</p>
             </Link>

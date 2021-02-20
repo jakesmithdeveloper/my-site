@@ -3,31 +3,20 @@ import { Link } from "gatsby"
 
 import Image from "../components/image"
 import Layout from "../components/layout"
+import styles from "./styles/index.module.css"
 
 export default function Home() {
   return (
     <div>
       <Layout>
-        <div
-          style={{
-            maxWidth: "500px",
-            margin: "0 auto",
-          }}
-        >
+        <div className={styles.imageContainer}>
           <Image />
         </div>
         <div style={{ textAlign: "center" }}>
-          <p
-            style={{
-              textAlign: "center",
-            }}
-          >
+          <p>
             This site will have to do for now ... I want to focus on building{" "}
-            <Link
-              style={{ textShadow: "none", backgroundImage: "none" }}
-              to="/projects/"
-            >
-              <span style={{ color: "purple" }}>cool things</span>
+            <Link className={styles.linkStyle} to="/projects/">
+              <span>cool things</span>
             </Link>
             .
           </p>
