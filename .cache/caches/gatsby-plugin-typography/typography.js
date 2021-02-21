@@ -1,1 +1,0 @@
-module.exports = require("/Users/jake/Development/web/my-site/src/utils/typography")
