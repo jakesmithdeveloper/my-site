@@ -1,14 +1,14 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import React from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/layout";
 
 const Projects = ({ data }) => {
-  console.log(data)
+  console.log(data);
 
   return (
     <Layout>
       <h1>My Projects</h1>
-      <table>
+      <table style={{ border: 0 }}>
         <thead>
           <th>Name</th>
           <th>Status</th>
@@ -25,8 +25,8 @@ const Projects = ({ data }) => {
         </tbody>
       </table>
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query {
@@ -41,6 +41,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default Projects
+export default Projects;

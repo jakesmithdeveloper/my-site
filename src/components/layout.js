@@ -1,8 +1,8 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
 
-import ListLink from "./listLink"
-import styles from "./styles/layout.module.css"
+import ListLink from "./listLink";
+import styles from "./styles/layout.module.css";
 
 const Layout = ({ children }) => {
   return (
@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
       {children}
       <footer
         style={{
-          position: "fixed",
+          position: "absolute",
           left: 0,
           bottom: 0,
           width: "100%",
@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
         </ul>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
