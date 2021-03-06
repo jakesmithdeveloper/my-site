@@ -1,8 +1,11 @@
 [
   {
-    "name": "S.S. Stopwatch",
+    "name": "Standing Time",
     "status": "development",
-    "link": "N/A",
+    "link": {
+      "name": "Github",
+      "link": "https://github.com/jakesmithdeveloper/stand-time"
+    },
     "description": "Simple timer to keep track of how long you stand vs sit while you work"
   }
 ]

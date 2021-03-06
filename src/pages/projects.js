@@ -19,7 +19,11 @@ const Projects = ({ data }) => {
             <tr key={index}>
               <td>{node.name}</td>
               <td>{node.status}</td>
-              <td>{node.link}</td>
+              <td>
+                <a href={node.link.link} target="_blank">
+                  {node.link.name}
+                </a>
+              </td>
             </tr>
           ))}
         </tbody>
@@ -34,7 +38,10 @@ export const query = graphql`
       edges {
         node {
           name
-          link
+          link {
+            name
+            link
+          }
           status
           description
         }
