@@ -25,7 +25,7 @@ module.exports = {
       },
     },
   ],
-}
+};
 
 // gatsby-source-filesystem
 /*
