@@ -1,34 +1,49 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/layout";
+
+import Header from "../components/header";
+import Footer from "../components/footer";
 
 const Projects = ({ data }) => {
   console.log(data);
 
   return (
-    <Layout>
-      <h1>My Projects</h1>
-      <table style={{ border: 0 }}>
-        <thead>
-          <th>Name</th>
-          <th>Status</th>
-          <th>Link</th>
-        </thead>
-        <tbody>
-          {data.allProjectsJson.edges.map(({ node }, index) => (
-            <tr key={index}>
-              <td>{node.name}</td>
-              <td>{node.status}</td>
-              <td>
-                <a href={node.link.link} target="_blank">
-                  {node.link.name}
-                </a>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </Layout>
+    <div>
+      <Header />
+      <div className="flex flex-col items-center mx-4">
+        <div className="max-w-xl w-full">
+          <table>
+            <thead>
+              <th>Name</th>
+              <th>Status</th>
+              <th>Link</th>
+            </thead>
+            <tbody>
+              {data.allProjectsJson.edges.map(({ node }, index) => (
+                <tr key={index}>
+                  <td>{node.name}</td>
+                  <td>{node.status}</td>
+                  <td>
+                    <div className="flex flex-col">
+                      {node.links.map((link) => (
+                        <a
+                          className="my-1 bg-none text-blue-500"
+                          href={link.link}
+                          target="_blank"
+                        >
+                          {link.name}
+                        </a>
+                      ))}
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <Footer />
+    </div>
   );
 };
 
@@ -38,7 +53,7 @@ export const query = graphql`
       edges {
         node {
           name
-          link {
+          links {
             name
             link
           }

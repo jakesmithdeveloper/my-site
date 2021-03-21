@@ -1,18 +1,22 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import React from "react";
+import { graphql } from "gatsby";
+
+import Header from "../components/header";
+import Footer from "../components/footer";
 
 const BlogPost = ({ data }) => {
-  const post = data.markdownRemark
+  const post = data.markdownRemark;
 
   return (
-    <Layout>
-      <div>
+    <div>
+      <Header />
+      <div className="text-center">
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
-    </Layout>
-  )
-}
+      <Footer />
+    </div>
+  );
+};
 
 export const query = graphql`
   query($slug: String!) {
@@ -23,6 +27,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default BlogPost
+export default BlogPost;

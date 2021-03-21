@@ -1,10 +1,11 @@
-import React from "react"
+import React from "react";
 
-import kebabCase from "lodash/kebabCase"
+import kebabCase from "lodash/kebabCase";
 
-import { Link, graphql } from "gatsby"
+import { Link, graphql } from "gatsby";
 
-import Layout from "../components/layout"
+import Header from "../components/header";
+import Footer from "../components/footer";
 
 const TagsPage = ({
   data: {
@@ -14,27 +15,27 @@ const TagsPage = ({
     },
   },
 }) => (
-  <Layout>
-    <div>
-      <div>
-        <h1>Tags</h1>
-        <ul>
-          {group.map(tag => (
-            <li key={tag.fieldValue}>
-              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                <h3>
-                  {tag.fieldValue} ({tag.totalCount})
-                </h3>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+  <div>
+    <Header />
+    <div className="flex flex-col items-center">
+      <h1 className="text-3xl">Tags</h1>
+      <ul className="mt-6">
+        {group.map((tag) => (
+          <li key={tag.fieldValue}>
+            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+              <h3>
+                {tag.fieldValue} ({tag.totalCount})
+              </h3>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
-  </Layout>
-)
+    <Footer />
+  </div>
+);
 
-export default TagsPage
+export default TagsPage;
 
 export const pageQuery = graphql`
   query {
@@ -50,4 +51,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
