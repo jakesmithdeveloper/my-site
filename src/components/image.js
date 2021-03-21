@@ -2,6 +2,10 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 
+import { StaticImage } from "gatsby-plugin-image";
+
+import "../styles/global.css";
+
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
  * images with lazy loading and reduced file sizes. The image is loaded using a
@@ -14,28 +18,7 @@ import Img from "gatsby-image";
  */
 
 const Image = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "me-resized.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 500, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `);
-
-  if (!data?.placeholderImage?.childImageSharp?.fluid) {
-    return <div>Picture not found</div>;
-  }
-
-  return (
-    <Img
-      style={{ width: "100%" }}
-      fluid={data.placeholderImage.childImageSharp.fluid}
-    />
-  );
+  return <StaticImage src="../images/me-resized.png" />;
 };
 
 export default Image;

@@ -1,27 +1,31 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
 
-import Image from "../components/image"
-import Layout from "../components/layout"
-import styles from "./styles/index.module.css"
+import Header from "../components/header";
+import Image from "../components/image";
+import Footer from "../components/footer";
+
+import "../styles/global.css";
 
 export default function Home() {
   return (
     <div>
-      <Layout>
-        <div className={styles.imageContainer}>
+      <Header />
+      <div className="flex flex-col items-center">
+        <div className="max-w-me mt-4 md:mt-24">
           <Image />
         </div>
         <div style={{ textAlign: "center" }}>
-          <p>
+          <p className="mt-10 md:mt-24">
             This site will have to do for now ... I want to focus on building{" "}
-            <Link className={styles.linkStyle} to="/projects/">
-              <span>cool things</span>
+            <Link className="bg-none" to="/projects/">
+              <span className="text-purple-700">cool things</span>
             </Link>
             .
           </p>
         </div>
-      </Layout>
+      </div>
+      <Footer />
     </div>
-  )
+  );
 }

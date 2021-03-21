@@ -1,14 +1,15 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
 
-import styles from "./styles/listLink.module.css"
-
-const ListLink = props => (
-  <li style={{ display: `inline-block`, marginRight: `1rem` }}>
-    <Link className={styles.linkStyles} to={props.to}>
+const ListLink = (props) => (
+  <li className="">
+    <Link
+      className="no-underline shadow-none bg-none mx-2 md:mx-0"
+      to={props.to}
+    >
       {props.children}
     </Link>
   </li>
-)
+);
 
-export default ListLink
+export default ListLink;
