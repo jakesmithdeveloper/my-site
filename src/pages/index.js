@@ -8,8 +8,6 @@ import Footer from "../components/footer";
 import "../styles/global.css";
 
 export default function Home() {
-  document.title = "jakesmith.info";
-
   return (
     <div>
       <Header />
