@@ -7,11 +7,16 @@ import Footer from "../components/footer";
 const BlogPost = ({ data }) => {
   const post = data.markdownRemark;
 
+  console.log(post);
+
   return (
     <div>
       <Header />
-      <div className="text-center">
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <div className="flex justify-center">
+        <div
+          className="max-w-lg"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
       </div>
       <Footer />
     </div>
