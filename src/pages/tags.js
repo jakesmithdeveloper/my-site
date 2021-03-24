@@ -5,7 +5,6 @@ import kebabCase from "lodash/kebabCase";
 import { Link, graphql } from "gatsby";
 
 import Header from "../components/header";
-import Footer from "../components/footer";
 
 const TagsPage = ({
   data: {
@@ -31,7 +30,6 @@ const TagsPage = ({
         ))}
       </ul>
     </div>
-    <Footer />
   </div>
 );
 

@@ -3,7 +3,6 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 
 import Header from "../components/header";
-import Footer from "../components/footer";
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext;
@@ -36,7 +35,6 @@ const Tags = ({ pageContext, data }) => {
           all tags
         </Link>
       </div>
-      <Footer />
     </div>
   );
 };
