@@ -69,3 +69,6 @@ yarn-error.log
 
 #Cache
 .cache/
+
+# Public folder because gh-pages tracks that
+public/ 
