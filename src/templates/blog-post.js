@@ -1,8 +1,7 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 
 import Header from "../components/header";
-import Footer from "../components/footer";
 
 const BlogPost = ({ data }) => {
   const post = data.markdownRemark;
@@ -12,13 +11,20 @@ const BlogPost = ({ data }) => {
   return (
     <div>
       <Header />
-      <div className="flex justify-center">
+      <div className="flex justify-center mx-3 md:mx-0">
         <div
-          className="max-w-lg"
+          className="w-full max-w-lg markdown"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
       </div>
-      <Footer />
+      <div className="w-full flex justify-center">
+        <Link
+          className="mb-8 mt-2 py-2 no-underline shadow-none bg-none text-2xl "
+          to="/blog/"
+        >
+          Back to posts
+        </Link>
+      </div>
     </div>
   );
 };

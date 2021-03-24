@@ -2,7 +2,6 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import Header from "../components/header";
-import Footer from "../components/footer";
 
 const Projects = ({ data }) => {
   console.log(data);
@@ -30,6 +29,7 @@ const Projects = ({ data }) => {
                           className="my-1 bg-none text-blue-500"
                           href={link.link}
                           target="_blank"
+                          rel="noreferrer"
                         >
                           {link.name}
                         </a>
@@ -42,7 +42,6 @@ const Projects = ({ data }) => {
           </table>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

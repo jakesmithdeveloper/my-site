@@ -2,7 +2,6 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 
 import Header from "../components/header";
-import Footer from "../components/footer";
 
 const Blog = ({ data }) => {
   return data.allMarkdownRemark.edges.length < 0 ? (
@@ -48,7 +47,6 @@ const Blog = ({ data }) => {
           </div>
         ))}
       </div>
-      <Footer />
     </div>
   );
 };
