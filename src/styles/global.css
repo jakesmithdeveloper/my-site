@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.markdown h1 {
+  @apply text-4xl text-center;
+}
+
+.markdown h2 {
+  @apply text-sm text-gray-600;
+}
+
+.markdown h3 {
+  @apply text-2xl mt-2 ml-2;
+}
+
+.markdown h6 {
+  @apply text-center text-gray-900 text-xs mt-2;
+}
+
+.markdown img {
+  @apply max-w-blog mx-auto rounded-2xl;
+}
+
+.markdown img[alt="title example"] {
+  @apply p-3 bg-gray-900;
+}
+
+.markdown code {
+  @apply text-sm text-gray-50 bg-gray-900 m-auto;
+}

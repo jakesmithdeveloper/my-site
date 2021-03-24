@@ -3,13 +3,12 @@ import { Link } from "gatsby";
 
 import Header from "../components/header";
 import Image from "../components/image";
-import Footer from "../components/footer";
 
 import "../styles/global.css";
 
 export default function Home() {
   return (
-    <div>
+    <div className="">
       <Header />
       <div className="flex flex-col items-center">
         <div className="max-w-me mt-4 md:mt-24">
@@ -25,7 +24,6 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

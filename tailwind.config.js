@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       maxWidth: {
         me: "150px",
+        blog: "300px",
       },
     },
   },
