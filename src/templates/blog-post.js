@@ -6,8 +6,6 @@ import Header from "../components/header";
 const BlogPost = ({ data }) => {
   const post = data.markdownRemark;
 
-  console.log(post);
-
   return (
     <div>
       <Header />
