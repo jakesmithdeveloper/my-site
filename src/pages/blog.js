@@ -10,7 +10,7 @@ const Blog = ({ data }) => {
     <div>
       <Header />
       <div className="flex flex-col items-center">
-        <ul className="list-none ">
+        <ul className="list-none my-2 md:my-6">
           <li className="inline-block mr-1">
             <h3>Tags:</h3>
           </li>
@@ -34,7 +34,7 @@ const Blog = ({ data }) => {
           </li>
         </ul>
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div key={node.id}>
+          <div key={node.id} className="mb-6 md:mb-8">
             <Link
               to={node.fields.slug}
               className="no-underline shadow-none bg-none"
