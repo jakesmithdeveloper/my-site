@@ -26,6 +26,10 @@
   @apply p-3 bg-gray-900;
 }
 
+.markdown img[alt="code example"] {
+  @apply max-w-sm md:max-w-lg;
+}
+
 .markdown code {
   @apply text-sm text-gray-50 bg-gray-900 m-auto;
 }

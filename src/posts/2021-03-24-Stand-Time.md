@@ -41,9 +41,7 @@ One of the main features that sold me on tailwind css was their built in dark cl
 <br>
 <br>
 
-    <h1 className="text-royal-purple dark:text-gray-100">
-    Stand Time
-    </h1>
+![code example](https://i.ibb.co/HTpcLHn/htmlscreenshot.png)
 
 <br>
 
