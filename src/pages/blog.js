@@ -53,15 +53,15 @@ const Blog = ({ data }) => {
 
 export const query = graphql`
   {
-    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
+    allMarkdownRemark {
       totalCount
       edges {
         node {
           id
           frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
             tags
+            date(formatString: "DD MMMM, YYYY")
+            title
           }
           fields {
             slug
