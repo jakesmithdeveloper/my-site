@@ -15,10 +15,15 @@ export default function Home() {
           <Image />
         </div>
         <div style={{ textAlign: "center" }}>
-          <p className="mt-10 md:mt-24">
-            This site will have to do for now ... I want to focus on building{" "}
+          <p className="mt-10 md:mt-8">
+            This is my personal site.
+            <br />I want to{" "}
             <Link className="bg-none" to="/projects/">
-              <span className="text-purple-700">cool things</span>
+              <span className="text-purple-700 font-bold">build</span>
+            </Link>
+            , and{" "}
+            <Link className="bg-none" to="/blog/">
+              <span className="text-green-500 font-bold">talk</span>
             </Link>
             .
           </p>
